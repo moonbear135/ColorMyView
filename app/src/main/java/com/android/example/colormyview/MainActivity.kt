@@ -1,9 +1,16 @@
 package com.android.example.colormyview
 
 import android.graphics.Color
+import android.os.Binder
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.PersistableBundle
+import android.renderscript.ScriptGroup
 import android.view.View
+import android.widget.TextView
+import com.android.example.colormyview.databinding.ActivityMainBinding
+import androidx.lifecycle.ViewModel as ViewModel1
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -13,10 +20,29 @@ class MainActivity : AppCompatActivity() {
         setListeners()
     }
 
+//    private lateinit var binding: ActivityMainBinding
+//
+//    override fun onCreate( savedInstanceState: Bundle?) {
+//        super.onCreate(savedInstanceState)
+//        binding = ActivityMainBinding.inflate(layoutInflater)
+//        val view = binding.root
+//        setContentView(view)
+//        setListeners()
+//    }
+
+
     private fun setListeners() {
-        val clickableViews: List<View> =
-            listOf(box_one_text, box_two_text, box_three_text,
-                   box_four_text, box_five_text, constranent_layout)
+
+        val view1 : View = findViewById(R.id.box_one_text)
+        val view2 : View = findViewById(R.id.box_two_text)
+        val view3 : View = findViewById(R.id.box_three_text)
+        val view4 : View = findViewById(R.id.box_four_text)
+        val view5 : View = findViewById(R.id.box_five_text)
+        val view6 : View = findViewById(R.id.constranent_layout)
+
+        val clickableViews : List<View> =
+            listOf(view1,view2,view3, view4, view5, view6)
+
 
         for (item in clickableViews) {
             item.setOnClickListener { makeColored(it) }

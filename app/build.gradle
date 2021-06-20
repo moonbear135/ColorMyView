@@ -6,6 +6,7 @@ plugins {
 android {
     compileSdkVersion 30
     buildToolsVersion "30.0.3"
+    apply plugin: 'kotlin-android-extensions'
 
     defaultConfig {
         applicationId "com.android.example.colormyview"
@@ -44,4 +45,5 @@ dependencies {
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    apply plugin: 'kotlin-android-extensions'
 }
